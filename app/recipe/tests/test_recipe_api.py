@@ -34,7 +34,7 @@ def create_recipe(user, **params):
         'time_minutes': 22,
         'price': Decimal('5.25'),
         'description': 'Sample description',
-        'link': 'httpp://example/com/recipe/pdf',
+        'link': 'http://example.com/recipe.pdf',
     }
     defaults.update(params)
 
@@ -344,7 +344,7 @@ class PrivateRecipeApiTests(TestCase):
     def test_update_recipe_assign_ingredient(self):
         """Test assigning an existing ingredient when updating a recipe"""
         ingredient1 = Ingredient.objects.create(
-            user=self.user, name='{e[[er]]}')
+            user=self.user, name='Pepper')
         recipe = create_recipe(user=self.user)
         recipe.ingredients.add(ingredient1)
 
